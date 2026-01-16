@@ -5,92 +5,74 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV - Andrés Castellanos</title>
     <style>
-        :root {
-            --primary-color: #004e92;
-            --secondary-color: #333;
-            --bg-color: #f4f4f9;
-            --text-color: #444;
-            --white: #ffffff;
-        }
-
+        /* CSS SIMPLE SIN BORDE BLANCO EN LA FOTO */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--bg-color);
             margin: 0;
             padding: 0;
+            background: #f4f4f9;
+            color: #333;
+            line-height: 1.6;
         }
 
-        /* Header / Hero Section */
         header {
-            background: linear-gradient(135deg, #000428, var(--primary-color));
-            color: var(--white);
-            padding: 4rem 1rem;
+            background: linear-gradient(135deg, #004e92, #000428);
+            color: white;
+            padding: 3rem 1rem;
             text-align: center;
         }
 
-        /* FOTO MÁS GRANDE Y CENTRADA */
+        /* FOTO SIN BORDE BLANCO - SOLO EL CÍRCULO */
         .profile-img {
-            /* Tamaño aumentado significativamente */
-            width: 220px;
-            height: 220px;
-            
-            /* Centrado perfecto */
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            /* SIN BORDE: border: 5px solid white; <-- ELIMINADO */
             object-fit: cover;
             object-position: center center;
-            
-            /* Forma circular */
-            border-radius: 50%;
-            
-            /* Borde y efectos */
-            border: 6px solid #ffffff;
-            box-shadow: 
-                0 0 0 2px rgba(35, 166, 213, 0.3),
-                0 8px 25px rgba(0, 0, 0, 0.4);
-            
-            /* Posicionamiento */
             display: block;
-            margin: 0 auto 1.5rem auto;
-            
-            /* Transición */
-            transition: all 0.3s ease;
+            margin: 0 auto 1.5rem;
+            /* Sombra más suave sin borde blanco */
+            box-shadow: 0 4px 20px rgba(0,0,0,0.25);
         }
 
-        .profile-img:hover {
-            transform: scale(1.03);
-        }
+        /* OPCIÓN: Si quieres un borde sutil del mismo color del fondo */
+        /* .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 3px solid rgba(255,255,255,0.3); Borde semi-transparente 
+            object-fit: cover;
+            object-position: center center;
+            display: block;
+            margin: 0 auto 1.5rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        } */
 
         header h1 {
             margin: 0;
-            font-size: 2.5rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
+            font-size: 2.2rem;
         }
 
         header p {
-            font-size: 1.2rem;
+            margin: 0.5rem 0 0;
+            font-size: 1.1rem;
             opacity: 0.9;
-            margin-top: 0.5rem;
         }
 
-        /* Container */
         .container {
-            max-width: 900px;
-            margin: 0 auto;
+            max-width: 800px;
+            margin: -30px auto 40px;
+            background: white;
             padding: 2rem;
-            background: var(--white);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            margin-top: -30px;
-            border-radius: 8px;
-            position: relative; /* Para que quede encima del header */
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
         }
 
-        /* Sections */
         section {
-            margin-bottom: 2.5rem;
-            border-bottom: 1px solid #eee;
+            margin-bottom: 2rem;
             padding-bottom: 1.5rem;
+            border-bottom: 1px solid #eee;
         }
 
         section:last-child {
@@ -98,15 +80,14 @@
         }
 
         h2 {
-            color: var(--primary-color);
-            border-left: 5px solid var(--primary-color);
+            color: #004e92;
+            border-left: 4px solid #004e92;
             padding-left: 10px;
-            text-transform: uppercase;
-            font-size: 1.4rem;
+            margin: 1.5rem 0 1rem;
+            font-size: 1.3rem;
         }
 
-        /* Experience & Education Lists */
-        .job, .school, .course {
+        .job {
             margin-bottom: 1.5rem;
         }
 
@@ -114,21 +95,26 @@
             display: flex;
             justify-content: space-between;
             flex-wrap: wrap;
+            margin-bottom: 0.3rem;
         }
 
         .job-title {
             font-weight: bold;
-            font-size: 1.1rem;
-            color: var(--secondary-color);
+            color: #222;
         }
 
-        .job-date, .company {
-            font-style: italic;
+        .job-date {
             color: #666;
+            font-style: italic;
+        }
+
+        .company {
+            color: #555;
+            margin-bottom: 0.5rem;
         }
 
         ul {
-            margin-top: 0.5rem;
+            margin: 0.5rem 0 0;
             padding-left: 20px;
         }
 
@@ -136,59 +122,40 @@
             margin-bottom: 0.3rem;
         }
 
-        /* Contact Info */
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1rem;
+        .contact-info {
             background: #f9f9f9;
-            padding: 1rem;
-            border-radius: 5px;
+            padding: 1.2rem;
+            border-radius: 8px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 0.8rem;
         }
 
-        .contact-item {
-            font-size: 0.95rem;
-        }
-        
         .contact-item strong {
-            color: var(--primary-color);
+            color: #004e92;
         }
 
-        /* Mobile Responsive */
         @media (max-width: 600px) {
+            .container {
+                margin: -20px 15px 30px;
+                padding: 1.5rem;
+            }
+            
             header {
-                padding: 3rem 1rem;
-            }
-            
-            header h1 { 
-                font-size: 1.8rem; 
-            }
-            
-            .container { 
-                padding: 1.5rem; 
-                width: 95%; 
-                margin-top: -20px;
-            }
-            
-            .job-header { 
-                flex-direction: column; 
-            }
-            
-            .profile-img {
-                width: 200px;
-                height: 200px;
-                border-width: 5px;
-            }
-        }
-        
-        @media (max-width: 400px) {
-            .profile-img {
-                width: 180px;
-                height: 180px;
+                padding: 2rem 1rem;
             }
             
             header h1 {
-                font-size: 1.6rem;
+                font-size: 1.8rem;
+            }
+            
+            .profile-img {
+                width: 160px;
+                height: 160px;
+            }
+            
+            .job-header {
+                flex-direction: column;
             }
         }
     </style>
@@ -289,7 +256,6 @@
                 <ul>
                     <li><strong>AWS Training & Certification:</strong> AWS Cloud Practitioner Essentials (Enero 2026)</li>
                     <li><strong>Platzi:</strong> Curso de Introducción a la Administración de Servidores (Diciembre 2025)</li>
-                    
                     <li><strong>Cisco Networking Academy:</strong> Certificado CCNAv7 (Introducción a las Redes, Switching, Routing y Wireless)</li>
                     <li><strong>Instituto Universitario Jesús Obrero:</strong> Manejo de Bases de Datos con PostgreSQL</li>
                 </ul>
@@ -298,7 +264,7 @@
 
         <section id="contacto">
             <h2>Contacto</h2>
-            <div class="contact-grid">
+            <div class="contact-info">
                 <div class="contact-item"><strong>Email:</strong> Anddreselias14@gmail.com</div>
                 <div class="contact-item"><strong>Teléfono:</strong> (+58) 0412-0945489</div>
                 <div class="contact-item"><strong>Dirección:</strong> Calle Bella Vista, Bloque 35, 23 de Enero, Caracas.</div>
@@ -308,3 +274,4 @@
 
 </body>
 </html>
+
