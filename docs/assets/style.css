@@ -1,9 +1,7 @@
 /* ============================================
-   CSS COMPLETO - CV ANDRÉS CASTELLANOS
-   VERSIÓN SIMPLIFICADA CON AJUSTE FÁCIL
+   SOLUCIÓN DEFINITIVA - FOTO PERFECTAMENTE CENTRADA
    ============================================ */
 
-/* --- 1. CONFIGURACIÓN BÁSICA --- */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
@@ -13,7 +11,7 @@ body {
     line-height: 1.6;
 }
 
-/* --- 2. ENCABEZADO CON FOTO --- */
+/* Header */
 header {
     background: linear-gradient(135deg, #004e92, #000428);
     color: white;
@@ -21,78 +19,89 @@ header {
     text-align: center;
 }
 
-/* --- 3. MARCO DE LA FOTO - AJUSTA SOLO ESTA SECCIÓN --- */
-.photo-container {
-    width: 200px;
-    height: 200px;
+/* CONTENEDOR DEL CÍRCULO */
+.photo-frame {
+    width: 230px;
+    height: 230px;
     margin: 0 auto 1.5rem;
+    padding: 10px;
+    background: linear-gradient(135deg, #23A6D5, #E73C7E);
     border-radius: 50%;
-    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
+/* ¡¡¡CÍRCULO CON BACKGROUND-IMAGE - ESTO SÍ FUNCIONA!!! */
+.photo-circle {
+    width: 210px;
+    height: 210px;
+    border-radius: 50%;
     border: 5px solid white;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    
+    /* ¡ESTAS SON LAS PROPIEDADES MÁGICAS! */
+    background-size: cover;          /* Ajusta la imagen al círculo */
+    background-position: center;     /* Centra la imagen horizontalmente */
+    background-repeat: no-repeat;    /* No repite la imagen */
+    
+    /* AJUSTA ESTAS DOS PROPIEDADES PARA MOVER LA FOTO: */
+    background-position: 60% 60%;    /* <-- ¡CAMBIAR ESTOS NÚMEROS! */
+    
+    /* Si necesitas hacer zoom: */
+    /* background-size: 120%; */     /* Descomenta y ajusta el % */
+    
+    /* Transición suave */
+    transition: all 0.3s ease;
 }
 
-/* ¡¡¡AJUSTA ESTOS 4 VALORES NADA MÁS!!! */
-.profile-img {
-    width: 150%;
-    height: 150%;
-    position: absolute;
-    top: 80%;       /* Mantén igual */
-    left: 90%;      /* Cambia 65% por 70% */
-    transform: translate(-50%, -50%);
-    object-position: 85% 85%; /* Cambia 70% 70% por 75% 70% */
-    object-fit: cover;
-    display: block;
-    transition: transform 0.3s ease;
+.photo-circle:hover {
+    transform: scale(1.05);
 }
 
-/* --- 4. TEXTO DEL ENCABEZADO --- */
+/* Texto */
 header h1 {
     margin: 0;
-    font-size: 2.2rem;
+    font-size: 2.5rem;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
 }
 
 header p {
     margin: 0.5rem 0 0;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     opacity: 0.9;
 }
 
-/* --- 5. CONTENEDOR PRINCIPAL --- */
+/* Contenedor principal */
 .container {
-    max-width: 800px;
+    max-width: 900px;
     margin: -30px auto 40px;
     background: white;
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
 }
 
-/* --- 6. SECCIONES --- */
+/* Secciones */
 section {
     margin-bottom: 2rem;
     padding-bottom: 1.5rem;
     border-bottom: 1px solid #eee;
 }
 
-section:last-child {
-    border-bottom: none;
-}
-
 h2 {
     color: #004e92;
-    border-left: 4px solid #004e92;
-    padding-left: 10px;
+    border-left: 5px solid #004e92;
+    padding-left: 12px;
     margin: 1.5rem 0 1rem;
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     text-transform: uppercase;
 }
 
-/* --- 7. EXPERIENCIA LABORAL --- */
+/* Experiencia */
 .job {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.8rem;
 }
 
 .job-header {
@@ -105,6 +114,7 @@ h2 {
 .job-title {
     font-weight: bold;
     color: #222;
+    font-size: 1.1rem;
 }
 
 .job-date {
@@ -115,6 +125,7 @@ h2 {
 .company {
     color: #555;
     margin-bottom: 0.5rem;
+    font-style: italic;
 }
 
 ul {
@@ -123,30 +134,25 @@ ul {
 }
 
 li {
-    margin-bottom: 0.3rem;
+    margin-bottom: 0.4rem;
 }
 
-/* --- 8. EDUCACIÓN --- */
-.school {
-    margin-bottom: 1rem;
-}
-
-/* --- 9. CONTACTO --- */
+/* Contacto */
 .contact-info {
-    background: #f9f9f9;
-    padding: 1.2rem;
-    border-radius: 8px;
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 10px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 0.8rem;
+    gap: 1rem;
 }
 
 .contact-item strong {
     color: #004e92;
 }
 
-/* --- 10. RESPONSIVE --- */
-@media (max-width: 700px) {
+/* Responsive */
+@media (max-width: 600px) {
     .container {
         margin: -20px 15px 30px;
         padding: 1.5rem;
@@ -160,55 +166,18 @@ li {
         font-size: 1.8rem;
     }
     
-    .photo-container {
-        width: 180px;
-        height: 180px;
+    .photo-frame {
+        width: 200px;
+        height: 200px;
+        padding: 8px;
+    }
+    
+    .photo-circle {
+        width: 184px;
+        height: 184px;
     }
     
     .job-header {
         flex-direction: column;
     }
 }
-
-@media (max-width: 400px) {
-    .photo-container {
-        width: 160px;
-        height: 160px;
-    }
-    
-    header h1 {
-        font-size: 1.5rem;
-    }
-}
-
-/* --- 11. GUÍA VISUAL DE AJUSTES --- */
-/*
-PARA MOVER LA FOTO DENTRO DEL CÍRCULO:
-
-1. object-position: [horizontal]% [vertical]%;
-   - Ej: 50% 50% = centro perfecto
-   - 40% 50% = mueve a la IZQUIERDA
-   - 60% 50% = mueve a la DERECHA
-   - 50% 40% = mueve hacia ARRIBA
-   - 50% 60% = mueve hacia ABAJO
-
-2. transform: scale([numero]);
-   - 1.0 = tamaño normal
-   - 1.1 = zoom out 10%
-   - 0.9 = zoom in 10%
-
-3. transform: translate([horizontal]%, [vertical]%);
-   - 0% 0% = sin desplazamiento extra
-   - 5% 0% = mueve 5% a la derecha
-   - -5% 0% = mueve 5% a la izquierda
-   - 0% 5% = mueve 5% hacia abajo
-   - 0% -5% = mueve 5% hacia arriba
-
-¡SOLO CAMBIA LOS NÚMEROS ENTRE PARÉNTESIS!
-*/
-*/
-
-
-
-
-
