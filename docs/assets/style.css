@@ -34,13 +34,13 @@ header {
 
 /* ¡¡¡AJUSTA ESTOS 4 VALORES NADA MÁS!!! */
 .profile-img {
-    width: 120%;
-    height: 120%;
+    width: 150%;
+    height: 150%;
     position: absolute;
-    top: 65%;       /* Mantén igual */
+    top: 80%;       /* Mantén igual */
     left: 90%;      /* Cambia 65% por 70% */
     transform: translate(-50%, -50%);
-    object-position: 75% 70%; /* Cambia 70% 70% por 75% 70% */
+    object-position: 85% 85%; /* Cambia 70% 70% por 75% 70% */
     object-fit: cover;
     display: block;
     transition: transform 0.3s ease;
@@ -207,6 +207,7 @@ PARA MOVER LA FOTO DENTRO DEL CÍRCULO:
 ¡SOLO CAMBIA LOS NÚMEROS ENTRE PARÉNTESIS!
 */
 */
+
 
 
 
