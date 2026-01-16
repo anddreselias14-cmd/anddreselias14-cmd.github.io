@@ -30,7 +30,7 @@
             text-align: center;
         }
 
-        /* CONTENEDOR PARA RECORTE PERFECTO (SOLUCIÓN 1) */
+        /* CONTENEDOR PARA RECORTE Y CENTRADO PERFECTO */
         .photo-frame {
             width: 230px;
             height: 230px;
@@ -53,22 +53,49 @@
             width: 210px;
             height: 210px;
             border-radius: 50%;
-            overflow: hidden; /* Esto oculta cualquier parte blanca que sobresalga */
+            overflow: hidden;
             border: 4px solid white;
+            position: relative; /* Para centrado absoluto */
         }
 
+        /* FOTO PERFECTAMENTE CENTRADA */
+        .profile-img {
+            width: 100%;
+            height: 100%;
+            
+            /* CENTRADO PERFECTO - ajusta estos valores según tu foto */
+            object-fit: cover;
+            object-position: 50% 30%; /* 50% horizontal, 30% vertical (ajusta según tu cara) */
+            
+            display: block;
+            transition: transform 0.3s ease;
+            
+            /* Forzar alineación */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .profile-img:hover {
+            transform: translate(-50%, -50%) scale(1.05);
+        }
+
+        /* Versión alternativa más simple (descomenta si la anterior no funciona) */
+        /*
         .profile-img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            object-position: center center;
+            object-position: center 25%; /* Ajusta el 25% según donde esté tu cara */
             display: block;
             transition: transform 0.3s ease;
         }
-
+        
         .profile-img:hover {
             transform: scale(1.05);
         }
+        */
 
         header h1 {
             margin: 0;
@@ -329,6 +356,33 @@
             </div>
         </section>
     </div>
+
+    <script>
+        // Script para ajustar automáticamente el centrado de la foto
+        document.addEventListener('DOMContentLoaded', function() {
+            const img = document.querySelector('.profile-img');
+            
+            // Cuando la imagen se cargue, ajustamos el centrado
+            img.onload = function() {
+                // Puedes ajustar estos valores según necesites:
+                // object-position: [horizontal]% [vertical]%
+                // 50% 50% = centro exacto
+                // 50% 30% = centro horizontal, 30% desde arriba (para caras altas en la foto)
+                // 50% 40% = centro horizontal, 40% desde arriba (para caras más bajas)
+                
+                // Intenta diferentes valores hasta que tu cara quede centrada
+                img.style.objectPosition = '50% 30%';
+                
+                // O usa este método alternativo
+                // img.style.objectPosition = 'center 25%';
+            };
+            
+            // Si ya está cargada, aplicar de inmediato
+            if (img.complete) {
+                img.style.objectPosition = '50% 30%';
+            }
+        });
+    </script>
 
 </body>
 </html>
