@@ -1,3 +1,4 @@
+
 body {
 	width: 100wh;
 	height: 90vh;
@@ -93,4 +94,23 @@ h6 {
 	  background-size: cover;
 	  background-repeat: no-repeat;
 	  background-position: 50% 50%;
+
   }
+
+/* --- ESTILOS PARA LA FOTO DEL CV --- */
+.profile-img {
+    width: 220px;  /* Tamaño aumentado */
+    height: 220px;
+    object-fit: cover; /* Evita que se deforme */
+    border-radius: 50%; /* La hace redonda */
+    
+    /* Centrado perfecto */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px; /* Espacio debajo de la foto */
+    
+    /* Decoración */
+    border: 6px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0px 6px 20px rgba(0,0,0,0.3);
+}
