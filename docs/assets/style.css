@@ -29,25 +29,36 @@ body {
     box-shadow: 0 10px 30px rgba(0,0,0,0.3);
 }
 
-/* --- 3. ESTILOS DE LA FOTO (CORRECCIÓN DEFINITIVA) --- */
+/* --- 3. ESTILOS DE LA FOTO (MÁS GRANDE Y CENTRADA) --- */
 .profile-img {
-    /* Tamaño fijo del círculo */
-    width: 180px;
-    height: 180px;
-
-    /* MAGIA: Esto obliga a la foto a llenar el círculo y la centra */
-    object-fit: cover;        /* Recorta lo que sobre sin deformar */
-    object-position: center top; /* Alinea priorizando la cara */
-
-    /* Forma y Borde */
-    border-radius: 50%;       /* Crea el círculo perfecto */
-    border: 5px solid #ffffff; /* El borde blanco */
+    /* Tamaño aumentado significativamente */
+    width: 220px;
+    height: 220px;
+    
+    /* Centrado perfecto */
+    object-fit: cover;
+    object-position: center center;
+    
+    /* Forma circular */
+    border-radius: 50%;
+    
+    /* Borde y efectos */
+    border: 6px solid #ffffff;
+    box-shadow: 
+        0 0 0 2px rgba(35, 166, 213, 0.3),
+        0 8px 25px rgba(0, 0, 0, 0.4);
     
     /* Posicionamiento */
     display: block;
-    margin: 0 auto 1.5rem auto; /* Centrado horizontal */
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2); /* Sombra suave */
-    background-color: #fff; /* Fondo de seguridad */
+    margin: 0 auto 1.5rem auto;
+    
+    /* Transición */
+    transition: all 0.3s ease;
+}
+
+/* Efecto hover opcional */
+.profile-img:hover {
+    transform: scale(1.03);
 }
 
 /* --- 4. ENCABEZADO Y TEXTOS --- */
@@ -138,14 +149,29 @@ li {
         margin: 10px;
         padding: 1.5rem;
     }
+    
     h1 {
         font-size: 1.8rem;
     }
+    
     .profile-img {
-        width: 150px; /* Un poco más pequeña en celular */
-        height: 150px;
+        width: 200px; /* Un poco más pequeña en celular */
+        height: 200px;
+        border-width: 5px;
     }
+    
     .job-header {
         flex-direction: column;
+    }
+}
+
+@media (max-width: 400px) {
+    .profile-img {
+        width: 180px;
+        height: 180px;
+    }
+    
+    h1 {
+        font-size: 1.6rem;
     }
 }
