@@ -30,17 +30,35 @@
             text-align: center;
         }
 
-        /* ESTILOS DE LA FOTO - MODIFICADO PARA JPG */
+        /* FOTO MÁS GRANDE Y CENTRADA */
         .profile-img {
-            width: 160px;
-            height: 160px;
-            object-fit: cover; /* Evita que la foto se deforme */
-            border-radius: 50%; /* Recorta las esquinas del JPG */
-            border: 5px solid #ffffff; /* Borde BLANCO SÓLIDO para tapar el corte */
-            margin: 0 auto 1rem auto; /* Centrado automático */
+            /* Tamaño aumentado significativamente */
+            width: 220px;
+            height: 220px;
+            
+            /* Centrado perfecto */
+            object-fit: cover;
+            object-position: center center;
+            
+            /* Forma circular */
+            border-radius: 50%;
+            
+            /* Borde y efectos */
+            border: 6px solid #ffffff;
+            box-shadow: 
+                0 0 0 2px rgba(35, 166, 213, 0.3),
+                0 8px 25px rgba(0, 0, 0, 0.4);
+            
+            /* Posicionamiento */
             display: block;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3); /* Sombra suave para resaltar */
-            background-color: white; /* Fondo de seguridad */
+            margin: 0 auto 1.5rem auto;
+            
+            /* Transición */
+            transition: all 0.3s ease;
+        }
+
+        .profile-img:hover {
+            transform: scale(1.03);
         }
 
         header h1 {
@@ -138,9 +156,40 @@
 
         /* Mobile Responsive */
         @media (max-width: 600px) {
-            header h1 { font-size: 1.8rem; }
-            .container { padding: 1rem; width: 95%; }
-            .job-header { flex-direction: column; }
+            header {
+                padding: 3rem 1rem;
+            }
+            
+            header h1 { 
+                font-size: 1.8rem; 
+            }
+            
+            .container { 
+                padding: 1.5rem; 
+                width: 95%; 
+                margin-top: -20px;
+            }
+            
+            .job-header { 
+                flex-direction: column; 
+            }
+            
+            .profile-img {
+                width: 200px;
+                height: 200px;
+                border-width: 5px;
+            }
+        }
+        
+        @media (max-width: 400px) {
+            .profile-img {
+                width: 180px;
+                height: 180px;
+            }
+            
+            header h1 {
+                font-size: 1.6rem;
+            }
         }
     </style>
 </head>
