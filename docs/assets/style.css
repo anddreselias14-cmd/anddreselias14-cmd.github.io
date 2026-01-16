@@ -57,19 +57,19 @@ body {
 /* ¡ESTA ES LA SOLUCIÓN! - Foto perfectamente centrada */
 .profile-img {
     /* Tamaño ligeramente mayor para permitir ajuste */
-    width: 105%;
-    height: 105%;
+    width: 112%;
+    height: 112%;
     
     /* POSICIONAMIENTO ABSOLUTO PARA CONTROL TOTAL */
     position: absolute;
     
     /* CENTRADO BÁSICO - ajusta estos valores según tu foto */
-    top: 50%;
-    left: 50%;
+    top: 58%;
+    left: 58%;
     transform: translate(-50%, -50%);
     
     /* AJUSTA ESTA LÍNEA PARA CENTRAR TU CARA */
-    object-position: 50% 40%; /* <-- ¡CAMBIAR ESTOS NÚMEROS! */
+    object-position: 63% 63%; /* <-- ¡CAMBIAR ESTOS NÚMEROS! */
     
     /* Propiedades fijas */
     object-fit: cover;
@@ -282,3 +282,4 @@ a:hover {
     object-position: 50% 55% !important;
 }
 */
+
