@@ -5,130 +5,306 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV - Andrés Castellanos</title>
     <style>
+        :root {
+            --primary-color: #004e92;
+            --secondary-color: #333;
+            --bg-color: #f4f4f9;
+            --text-color: #444;
+            --white: #ffffff;
+        }
+
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
             margin: 0;
-            padding: 20px;
-            background: #f0f0f0;
+            padding: 0;
         }
-        
-        .cv-container {
-            max-width: 800px;
-            margin: 0 auto;
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-        
-        .header {
+
+        /* Header / Hero Section */
+        header {
+            background: linear-gradient(135deg, #000428, var(--primary-color));
+            color: var(--white);
+            padding: 4rem 1rem;
             text-align: center;
-            margin-bottom: 30px;
         }
-        
-        .foto {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
+
+        /* FOTO MÁS GRANDE Y CENTRADA */
+        .profile-img {
+            /* Tamaño aumentado significativamente */
+            width: 220px;
+            height: 220px;
+            
+            /* Centrado perfecto */
             object-fit: cover;
-            border: 4px solid #004e92;
-            margin: 0 auto 20px;
+            object-position: center center;
+            
+            /* Forma circular */
+            border-radius: 50%;
+            
+            /* Borde y efectos */
+            border: 6px solid #ffffff;
+            box-shadow: 
+                0 0 0 2px rgba(35, 166, 213, 0.3),
+                0 8px 25px rgba(0, 0, 0, 0.4);
+            
+            /* Posicionamiento */
             display: block;
+            margin: 0 auto 1.5rem auto;
+            
+            /* Transición */
+            transition: all 0.3s ease;
         }
-        
-        h1 {
-            color: #004e92;
+
+        .profile-img:hover {
+            transform: scale(1.03);
+        }
+
+        header h1 {
             margin: 0;
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
-        
-        .subtitle {
-            color: #666;
-            margin: 5px 0 20px;
+
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-top: 0.5rem;
         }
-        
+
+        /* Container */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: var(--white);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            margin-top: -30px;
+            border-radius: 8px;
+            position: relative; /* Para que quede encima del header */
+        }
+
+        /* Sections */
+        section {
+            margin-bottom: 2.5rem;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 1.5rem;
+        }
+
+        section:last-child {
+            border-bottom: none;
+        }
+
         h2 {
-            color: #004e92;
-            border-bottom: 2px solid #004e92;
-            padding-bottom: 5px;
-            margin-top: 30px;
+            color: var(--primary-color);
+            border-left: 5px solid var(--primary-color);
+            padding-left: 10px;
+            text-transform: uppercase;
+            font-size: 1.4rem;
         }
-        
-        .job {
-            margin-bottom: 20px;
+
+        /* Experience & Education Lists */
+        .job, .school, .course {
+            margin-bottom: 1.5rem;
         }
-        
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
         .job-title {
             font-weight: bold;
-            color: #333;
+            font-size: 1.1rem;
+            color: var(--secondary-color);
         }
-        
-        .job-date {
-            color: #666;
-            float: right;
-        }
-        
-        .company {
-            color: #555;
+
+        .job-date, .company {
             font-style: italic;
-            margin: 5px 0;
+            color: #666;
         }
-        
+
         ul {
-            margin: 10px 0;
+            margin-top: 0.5rem;
             padding-left: 20px;
         }
-        
+
         li {
-            margin-bottom: 5px;
+            margin-bottom: 0.3rem;
+        }
+
+        /* Contact Info */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            background: #f9f9f9;
+            padding: 1rem;
+            border-radius: 5px;
+        }
+
+        .contact-item {
+            font-size: 0.95rem;
         }
         
-        .contacto {
-            background: #f9f9f9;
-            padding: 15px;
-            border-radius: 5px;
-            margin-top: 20px;
+        .contact-item strong {
+            color: var(--primary-color);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 600px) {
+            header {
+                padding: 3rem 1rem;
+            }
+            
+            header h1 { 
+                font-size: 1.8rem; 
+            }
+            
+            .container { 
+                padding: 1.5rem; 
+                width: 95%; 
+                margin-top: -20px;
+            }
+            
+            .job-header { 
+                flex-direction: column; 
+            }
+            
+            .profile-img {
+                width: 200px;
+                height: 200px;
+                border-width: 5px;
+            }
+        }
+        
+        @media (max-width: 400px) {
+            .profile-img {
+                width: 180px;
+                height: 180px;
+            }
+            
+            header h1 {
+                font-size: 1.6rem;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="cv-container">
-        <div class="header">
-            <img src="foto.jpg" alt="Foto" class="foto">
-            <h1>Andrés Castellanos</h1>
-            <p class="subtitle">Estudiante de Ingeniería en Sistemas | Pasión por la Tecnología</p>
-        </div>
+
+    <header>
+        <img src="foto.jpg" alt="Foto de Andrés" class="profile-img">
         
-        <h2>Sobre Mí</h2>
-        <p>Estudiante de Ingeniería en Sistemas, apasionado por la tecnología. Busco oportunidades desafiantes para aplicar mis conocimientos con compromiso y responsabilidad.</p>
+        <h1>Andrés Castellanos</h1>
+        <p>Estudiante de Ingeniería en Sistemas | Pasión por la Tecnología</p>
+    </header>
+
+    <div class="container">
         
-        <h2>Experiencia Laboral</h2>
-        
-        <div class="job">
-            <div>
-                <span class="job-title">Analista de Redes y Telefonía</span>
-                <span class="job-date">Julio 2025 - Presente</span>
+        <section id="sobre-mi">
+            <h2>Sobre Mí</h2>
+            <p>
+                Estudiante de Ingeniería en Sistemas, apasionado por la tecnología. Busco oportunidades desafiantes para aplicar mis conocimientos con compromiso y responsabilidad. Mi meta es impulsar mi desarrollo profesional y personal mediante la adquisición continua de nuevas herramientas y habilidades.
+            </p>
+        </section>
+
+        <section id="experiencia">
+            <h2>Experiencia Laboral</h2>
+
+            <div class="job">
+                <div class="job-header">
+                    <span class="job-title">Analista de Redes y Telefonía</span>
+                    <span class="job-date">Julio 2025 - Presente</span>
+                </div>
+                <div class="company">Soluciones Integrales Tecnológicas SIT, CA.</div>
+                <ul>
+                    <li>Soporte especializado en la infraestructura de redes y telefonía (VoIP).</li>
+                    <li>Verificación de reglas de Firewall para asegurar la seguridad perimetral y optimizar el flujo de tráfico.</li>
+                    <li>Aplicación de conocimientos en servidores (Windows/Linux).</li>
+                    <li>Revisión de conectividad a puertos para diversas aplicaciones y resolución de problemas.</li>
+                </ul>
             </div>
-            <div class="company">Soluciones Integrales Tecnológicas SIT, CA.</div>
-            <ul>
-                <li>Soporte especializado en la infraestructura de redes y telefonía (VoIP)</li>
-                <li>Verificación de reglas de Firewall</li>
-                <li>Aplicación de conocimientos en servidores (Windows/Linux)</li>
-            </ul>
-        </div>
-        
-        <!-- Más experiencia aquí -->
-        
-        <h2>Educación</h2>
-        <p><strong>Ingeniería en Sistemas</strong><br>
-        Universidad Nacional Experimental Politécnica "ANTONIO JOSÉ DE SUCRE"</p>
-        
-        <h2>Contacto</h2>
-        <div class="contacto">
-            <strong>Email:</strong> Anddreselias14@gmail.com<br>
-            <strong>Teléfono:</strong> (+58) 0412-0945489<br>
-            <strong>Dirección:</strong> Calle Bella Vista, Caracas
-        </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <span class="job-title">Analista de Monitoreo</span>
+                    <span class="job-date">Febrero 2024 - Julio 2025</span>
+                </div>
+                <div class="company">Soluciones Integrales Tecnológicas SIT, CA.</div>
+                <ul>
+                    <li>Gestión integral de Zabbix: administración y configuración de items y triggers.</li>
+                    <li>Monitoreo proactivo y continuo de la infraestructura crítica para garantizar la disponibilidad operativa.</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <span class="job-title">Técnico de Conectividad</span>
+                    <span class="job-date">Octubre 2023 - Febrero 2024</span>
+                </div>
+                <div class="company">Corporación Xorex C.A.</div>
+                <ul>
+                    <li>Verificación y diagnóstico de enlaces de comunicación y conmutador.</li>
+                    <li>Asistencia a mesa de entradas y ejecución de actualizaciones en base de datos de servicios.</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <span class="job-title">Ejecutivo de Atención a Clientes</span>
+                    <span class="job-date">Octubre 2022 - Marzo 2023</span>
+                </div>
+                <div class="company">Micasino.com C.A.</div>
+                <ul>
+                    <li>Atención y gestión integral de clientes y resolución de requerimientos.</li>
+                    <li>Gestión documental y de información (organización de registros).</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="educacion">
+            <h2>Educación</h2>
+            
+            <div class="school">
+                <div class="job-header">
+                    <span class="job-title">Ingeniería en Sistemas</span>
+                </div>
+                <div class="company">Universidad Nacional Experimental Politécnica "ANTONIO JOSÉ DE SUCRE"</div>
+            </div>
+
+            <div class="school">
+                <div class="job-header">
+                    <span class="job-title">Bachiller en Ciencias</span>
+                </div>
+                <div class="company">Colegio de Instrucción Actualizada Libertador</div>
+            </div>
+        </section>
+
+        <section id="cursos">
+            <h2>Cursos y Certificaciones</h2>
+            <div class="course">
+                <ul>
+                    <li><strong>AWS Training & Certification:</strong> AWS Cloud Practitioner Essentials (Enero 2026)</li>
+                    <li><strong>Platzi:</strong> Curso de Introducción a la Administración de Servidores (Diciembre 2025)</li>
+                    
+                    <li><strong>Cisco Networking Academy:</strong> Certificado CCNAv7 (Introducción a las Redes, Switching, Routing y Wireless)</li>
+                    <li><strong>Instituto Universitario Jesús Obrero:</strong> Manejo de Bases de Datos con PostgreSQL</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="contacto">
+            <h2>Contacto</h2>
+            <div class="contact-grid">
+                <div class="contact-item"><strong>Email:</strong> Anddreselias14@gmail.com</div>
+                <div class="contact-item"><strong>Teléfono:</strong> (+58) 0412-0945489</div>
+                <div class="contact-item"><strong>Dirección:</strong> Calle Bella Vista, Bloque 35, 23 de Enero, Caracas.</div>
+            </div>
+        </section>
     </div>
+
 </body>
 </html>
-
