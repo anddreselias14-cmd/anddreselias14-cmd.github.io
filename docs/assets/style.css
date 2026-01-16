@@ -1,7 +1,9 @@
 /* ============================================
-   SOLUCIÓN DEFINITIVA - FOTO PERFECTAMENTE CENTRADA
+   CSS COMPLETO - VERSIÓN HIPER AGRESIVA
+   MOVIMIENTO MÁXIMO DERECHA/ABAJO
    ============================================ */
 
+/* --- 1. CONFIGURACIÓN GENERAL --- */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
@@ -11,173 +13,385 @@ body {
     line-height: 1.6;
 }
 
-/* Header */
+/* --- 2. ENCABEZADO CON FOTO --- */
 header {
     background: linear-gradient(135deg, #004e92, #000428);
     color: white;
-    padding: 3rem 1rem;
+    padding: 4rem 1rem;
     text-align: center;
 }
 
-/* CONTENEDOR DEL CÍRCULO */
+/* --- 3. CONTENEDOR DEL CÍRCULO (MÁS GRANDE) --- */
 .photo-frame {
-    width: 230px;
-    height: 230px;
-    margin: 0 auto 1.5rem;
-    padding: 10px;
+    width: 260px;
+    height: 260px;
+    margin: 0 auto 2rem;
+    padding: 15px;
     background: linear-gradient(135deg, #23A6D5, #E73C7E);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    box-shadow: 0 10px 35px rgba(0,0,0,0.4);
 }
 
-/* ¡¡¡CÍRCULO CON BACKGROUND-IMAGE - ESTO SÍ FUNCIONA!!! */
+/* --- 4. ¡¡SOLUCIÓN HIPER AGRESIVA CON BACKGROUND-IMAGE!! --- */
 .photo-circle {
-    width: 210px;
-    height: 210px;
+    width: 230px;
+    height: 230px;
     border-radius: 50%;
-    border: 5px solid white;
+    border: 7px solid white;
     
-    /* ¡ESTAS SON LAS PROPIEDADES MÁGICAS! */
-    background-size: cover;          /* Ajusta la imagen al círculo */
-    background-position: center;     /* Centra la imagen horizontalmente */
-    background-repeat: no-repeat;    /* No repite la imagen */
+    /* IMAGEN CON ZOOM OUT MASIVO PARA MÁXIMO MOVIMIENTO */
+    background-image: url('foto.jpg');
+    background-size: 220%;           /* ¡ZOOM OUT MASIVO! (normal es 100%) */
+    background-repeat: no-repeat;
     
-    /* AJUSTA ESTAS DOS PROPIEDADES PARA MOVER LA FOTO: */
-    background-position: 60% 60%;    /* <-- ¡CAMBIAR ESTOS NÚMEROS! */
+    /* ¡¡MOVIMIENTO MÁXIMO POSIBLE!! */
+    background-position: 90% 90%;    /* <-- 90% = MÁXIMO DERECHA Y ABAJO */
     
-    /* Si necesitas hacer zoom: */
-    /* background-size: 120%; */     /* Descomenta y ajusta el % */
+    /* SI 90% NO ES SUFICIENTE, USA ESTOS VALORES: */
+    /* background-position: 92% 92%; */    /* Más extremo */
+    /* background-position: 95% 95%; */    /* Super extremo */
+    /* background-position: 98% 98%; */    /* Límite absoluto */
     
-    /* Transición suave */
-    transition: all 0.3s ease;
+    /* SI NECESITAS AÚN MÁS: */
+    /* background-size: 250%; */           /* Más zoom out */
+    /* background-position: 150px 150px; */ /* Movimiento por píxeles */
+    
+    transition: all 0.4s ease;
+    cursor: pointer;
 }
 
 .photo-circle:hover {
-    transform: scale(1.05);
+    transform: scale(1.08);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
 }
 
-/* Texto */
+/* --- 5. TEXTO DEL ENCABEZADO --- */
 header h1 {
     margin: 0;
-    font-size: 2.5rem;
+    font-size: 2.8rem;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
 }
 
 header p {
-    margin: 0.5rem 0 0;
-    font-size: 1.2rem;
-    opacity: 0.9;
+    margin: 0.8rem 0 0;
+    font-size: 1.3rem;
+    opacity: 0.95;
+    font-weight: 300;
 }
 
-/* Contenedor principal */
+/* --- 6. CONTENEDOR PRINCIPAL DEL CV --- */
 .container {
-    max-width: 900px;
-    margin: -30px auto 40px;
+    max-width: 950px;
+    margin: -40px auto 50px;
     background: white;
-    padding: 2.5rem;
-    border-radius: 12px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    padding: 3rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+    position: relative;
 }
 
-/* Secciones */
+/* --- 7. SECCIONES --- */
 section {
-    margin-bottom: 2rem;
-    padding-bottom: 1.5rem;
-    border-bottom: 1px solid #eee;
+    margin-bottom: 2.5rem;
+    padding-bottom: 2rem;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+section:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
 }
 
 h2 {
     color: #004e92;
-    border-left: 5px solid #004e92;
-    padding-left: 12px;
-    margin: 1.5rem 0 1rem;
-    font-size: 1.4rem;
+    border-left: 6px solid #004e92;
+    padding-left: 15px;
+    margin: 2rem 0 1.5rem;
+    font-size: 1.5rem;
     text-transform: uppercase;
+    font-weight: 700;
 }
 
-/* Experiencia */
+/* --- 8. EXPERIENCIA LABORAL --- */
 .job {
-    margin-bottom: 1.8rem;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: #fafafa;
+    border-radius: 10px;
+    border-left: 4px solid #23A6D5;
+    transition: transform 0.3s ease;
+}
+
+.job:hover {
+    transform: translateX(5px);
+    background: #f5f9ff;
 }
 
 .job-header {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     flex-wrap: wrap;
-    margin-bottom: 0.3rem;
+    margin-bottom: 0.5rem;
 }
 
 .job-title {
     font-weight: bold;
     color: #222;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
+    color: #004e92;
 }
 
 .job-date {
     color: #666;
     font-style: italic;
+    background: #e9ecef;
+    padding: 4px 10px;
+    border-radius: 15px;
+    font-size: 0.9rem;
 }
 
 .company {
     color: #555;
-    margin-bottom: 0.5rem;
-    font-style: italic;
+    margin-bottom: 0.8rem;
+    font-size: 1.1rem;
+    font-weight: 500;
 }
 
 ul {
-    margin: 0.5rem 0 0;
-    padding-left: 20px;
+    margin: 0.8rem 0 0;
+    padding-left: 25px;
+    list-style-type: none;
 }
 
 li {
-    margin-bottom: 0.4rem;
+    margin-bottom: 0.6rem;
+    padding-left: 1.5rem;
+    position: relative;
 }
 
-/* Contacto */
-.contact-info {
+li:before {
+    content: "▸";
+    color: #23A6D5;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+/* --- 9. EDUCACIÓN --- */
+.school {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
     background: #f8f9fa;
-    padding: 1.5rem;
-    border-radius: 10px;
+    border-radius: 8px;
+}
+
+.school .job-header {
+    margin-bottom: 0.3rem;
+}
+
+/* --- 10. CURSOS --- */
+.course ul {
+    margin-top: 0;
+}
+
+.course li {
+    margin-bottom: 0.8rem;
+    padding: 0.5rem;
+    background: #f8f9fa;
+    border-radius: 6px;
+}
+
+/* --- 11. CONTACTO --- */
+.contact-info {
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    padding: 2rem;
+    border-radius: 12px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    border: 1px solid #dee2e6;
+}
+
+.contact-item {
+    padding: 1rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+.contact-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
 .contact-item strong {
     color: #004e92;
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
 }
 
-/* Responsive */
-@media (max-width: 600px) {
+/* --- 12. RESPONSIVE DESIGN --- */
+@media (max-width: 768px) {
     .container {
-        margin: -20px 15px 30px;
-        padding: 1.5rem;
+        margin: -30px 20px 40px;
+        padding: 2rem;
     }
     
     header {
-        padding: 2rem 1rem;
+        padding: 3rem 1rem;
+    }
+    
+    header h1 {
+        font-size: 2.2rem;
+    }
+    
+    .photo-frame {
+        width: 220px;
+        height: 220px;
+        padding: 12px;
+    }
+    
+    .photo-circle {
+        width: 196px;
+        height: 196px;
+        border-width: 5px;
+        /* Ajuste para móvil - menos zoom out */
+        background-size: 180%;
+        background-position: 85% 85%;
+    }
+    
+    .job-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .job-date {
+        align-self: flex-start;
+    }
+    
+    .contact-info {
+        grid-template-columns: 1fr;
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 2.5rem 1rem;
     }
     
     header h1 {
         font-size: 1.8rem;
+        letter-spacing: 1px;
+    }
+    
+    header p {
+        font-size: 1.1rem;
     }
     
     .photo-frame {
         width: 200px;
         height: 200px;
-        padding: 8px;
+        padding: 10px;
     }
     
     .photo-circle {
-        width: 184px;
-        height: 184px;
+        width: 180px;
+        height: 180px;
+        background-size: 160%;
+        background-position: 82% 82%;
     }
     
-    .job-header {
-        flex-direction: column;
+    .container {
+        padding: 1.5rem;
+        margin: -25px 15px 30px;
+    }
+    
+    h2 {
+        font-size: 1.3rem;
+        padding-left: 12px;
+        margin: 1.5rem 0 1rem;
+    }
+    
+    .job {
+        padding: 1.2rem;
+    }
+    
+    .job-title {
+        font-size: 1.1rem;
     }
 }
+
+/* --- 13. ANIMACIONES --- */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+section {
+    animation: fadeIn 0.8s ease-out forwards;
+}
+
+section:nth-child(1) { animation-delay: 0.1s; }
+section:nth-child(2) { animation-delay: 0.2s; }
+section:nth-child(3) { animation-delay: 0.3s; }
+section:nth-child(4) { animation-delay: 0.4s; }
+section:nth-child(5) { animation-delay: 0.5s; }
+
+/* --- 14. ESTILOS ADICIONALES --- */
+* {
+    box-sizing: border-box;
+}
+
+a {
+    color: #23A6D5;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #004e92;
+    text-decoration: underline;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* --- 15. VARIABLES CSS PARA FÁCIL AJUSTE --- */
+:root {
+    --main-color: #004e92;
+    --accent-color: #23A6D5;
+    --text-color: #333;
+    --light-bg: #f4f4f9;
+}
+
