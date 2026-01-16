@@ -26,19 +26,21 @@
         header {
             background: linear-gradient(135deg, #000428, var(--primary-color));
             color: var(--white);
-            padding: 4rem 1rem; /* Más espacio para la foto */
+            padding: 4rem 1rem;
             text-align: center;
         }
 
-        /* ESTILOS DE LA FOTO */
+        /* ESTILOS DE LA FOTO - MODIFICADO PARA JPG */
         .profile-img {
             width: 160px;
             height: 160px;
             object-fit: cover; /* Evita que la foto se deforme */
-            border-radius: 50%; /* Esto la hace redonda */
-            border: 5px solid rgba(255, 255, 255, 0.3); /* Borde semitransparente */
-            margin-bottom: 1rem;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3); /* Sombra suave */
+            border-radius: 50%; /* Recorta las esquinas del JPG */
+            border: 5px solid #ffffff; /* Borde BLANCO SÓLIDO para tapar el corte */
+            margin: 0 auto 1rem auto; /* Centrado automático */
+            display: block;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3); /* Sombra suave para resaltar */
+            background-color: white; /* Fondo de seguridad */
         }
 
         header h1 {
@@ -156,7 +158,7 @@
         <section id="sobre-mi">
             <h2>Sobre Mí</h2>
             <p>
-                Estudiante de Ingeniería en Sistemas, apasionado por la tecnología. Busco oportunidades desafiantes para aplicar mis conocimientos con compromiso y responsabilidad. Mi meta es impulsar mi desarrollo profesional y personal mediante la adquisición continua de nuevas herramientas y habilidades[cite: 2, 3].
+                Estudiante de Ingeniería en Sistemas, apasionado por la tecnología. Busco oportunidades desafiantes para aplicar mis conocimientos con compromiso y responsabilidad. Mi meta es impulsar mi desarrollo profesional y personal mediante la adquisición continua de nuevas herramientas y habilidades.
             </p>
         </section>
 
@@ -170,10 +172,10 @@
                 </div>
                 <div class="company">Soluciones Integrales Tecnológicas SIT, CA.</div>
                 <ul>
-                    <li>Soporte especializado en la infraestructura de redes y telefonía (VoIP)[cite: 14, 15].</li>
-                    <li>Verificación de reglas de Firewall para asegurar la seguridad perimetral y optimizar el flujo de tráfico[cite: 16].</li>
-                    <li>Aplicación de conocimientos en servidores (Windows/Linux)[cite: 17].</li>
-                    <li>Revisión de conectividad a puertos para diversas aplicaciones y resolución de problemas[cite: 18].</li>
+                    <li>Soporte especializado en la infraestructura de redes y telefonía (VoIP).</li>
+                    <li>Verificación de reglas de Firewall para asegurar la seguridad perimetral y optimizar el flujo de tráfico.</li>
+                    <li>Aplicación de conocimientos en servidores (Windows/Linux).</li>
+                    <li>Revisión de conectividad a puertos para diversas aplicaciones y resolución de problemas.</li>
                 </ul>
             </div>
 
@@ -184,8 +186,8 @@
                 </div>
                 <div class="company">Soluciones Integrales Tecnológicas SIT, CA.</div>
                 <ul>
-                    <li>Gestión integral de Zabbix: administración y configuración de items y triggers[cite: 19, 20].</li>
-                    <li>Monitoreo proactivo y continuo de la infraestructura crítica para garantizar la disponibilidad operativa[cite: 21].</li>
+                    <li>Gestión integral de Zabbix: administración y configuración de items y triggers.</li>
+                    <li>Monitoreo proactivo y continuo de la infraestructura crítica para garantizar la disponibilidad operativa.</li>
                 </ul>
             </div>
 
@@ -196,8 +198,8 @@
                 </div>
                 <div class="company">Corporación Xorex C.A.</div>
                 <ul>
-                    <li>Verificación y diagnóstico de enlaces de comunicación y conmutador[cite: 22, 23].</li>
-                    <li>Asistencia a mesa de entradas y ejecución de actualizaciones en base de datos de servicios[cite: 24, 25].</li>
+                    <li>Verificación y diagnóstico de enlaces de comunicación y conmutador.</li>
+                    <li>Asistencia a mesa de entradas y ejecución de actualizaciones en base de datos de servicios.</li>
                 </ul>
             </div>
 
@@ -208,8 +210,8 @@
                 </div>
                 <div class="company">Micasino.com C.A.</div>
                 <ul>
-                    <li>Atención y gestión integral de clientes y resolución de requerimientos[cite: 26, 27].</li>
-                    <li>Gestión documental y de información (organización de registros)[cite: 28].</li>
+                    <li>Atención y gestión integral de clientes y resolución de requerimientos.</li>
+                    <li>Gestión documental y de información (organización de registros).</li>
                 </ul>
             </div>
         </section>
@@ -221,14 +223,14 @@
                 <div class="job-header">
                     <span class="job-title">Ingeniería en Sistemas</span>
                 </div>
-                <div class="company">Universidad Nacional Experimental Politécnica "ANTONIO JOSÉ DE SUCRE"[cite: 7].</div>
+                <div class="company">Universidad Nacional Experimental Politécnica "ANTONIO JOSÉ DE SUCRE"</div>
             </div>
 
             <div class="school">
                 <div class="job-header">
                     <span class="job-title">Bachiller en Ciencias</span>
                 </div>
-                <div class="company">Colegio de Instrucción Actualizada Libertador[cite: 9, 10].</div>
+                <div class="company">Colegio de Instrucción Actualizada Libertador</div>
             </div>
         </section>
 
@@ -236,11 +238,11 @@
             <h2>Cursos y Certificaciones</h2>
             <div class="course">
                 <ul>
-                    <li><strong>AWS Training & Certification:</strong> AWS Cloud Practitioner Essentials (Enero 2026)[cite: 35, 36].</li>
-                    <li><strong>Platzi:</strong> Curso de Introducción a la Administración de Servidores (Diciembre 2025)[cite: 46, 47].</li>
+                    <li><strong>AWS Training & Certification:</strong> AWS Cloud Practitioner Essentials (Enero 2026)</li>
+                    <li><strong>Platzi:</strong> Curso de Introducción a la Administración de Servidores (Diciembre 2025)</li>
                     
-                    <li><strong>Cisco Networking Academy:</strong> Certificado CCNAv7 (Introducción a las Redes, Switching, Routing y Wireless)[cite: 30, 31].</li>
-                    <li><strong>Instituto Universitario Jesús Obrero:</strong> Manejo de Bases de Datos con PostgreSQL[cite: 32, 33].</li>
+                    <li><strong>Cisco Networking Academy:</strong> Certificado CCNAv7 (Introducción a las Redes, Switching, Routing y Wireless)</li>
+                    <li><strong>Instituto Universitario Jesús Obrero:</strong> Manejo de Bases de Datos con PostgreSQL</li>
                 </ul>
             </div>
         </section>
@@ -248,9 +250,9 @@
         <section id="contacto">
             <h2>Contacto</h2>
             <div class="contact-grid">
-                <div class="contact-item"><strong>Email:</strong> Anddreselias14@gmail.com [cite: 5]</div>
-                <div class="contact-item"><strong>Teléfono:</strong> (+58) 0412-0945489 [cite: 5]</div>
-                <div class="contact-item"><strong>Dirección:</strong> Calle Bella Vista, Bloque 35, 23 de Enero, Caracas[cite: 5].</div>
+                <div class="contact-item"><strong>Email:</strong> Anddreselias14@gmail.com</div>
+                <div class="contact-item"><strong>Teléfono:</strong> (+58) 0412-0945489</div>
+                <div class="contact-item"><strong>Dirección:</strong> Calle Bella Vista, Bloque 35, 23 de Enero, Caracas.</div>
             </div>
         </section>
     </div>
