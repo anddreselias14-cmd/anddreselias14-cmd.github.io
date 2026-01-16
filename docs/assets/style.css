@@ -38,7 +38,7 @@ header {
     height: 120%;
     position: absolute;
     top: 65%;       /* Mantén igual */
-    left: 75%;      /* Cambia 65% por 70% */
+    left: 90%;      /* Cambia 65% por 70% */
     transform: translate(-50%, -50%);
     object-position: 75% 70%; /* Cambia 70% 70% por 75% 70% */
     object-fit: cover;
@@ -207,6 +207,7 @@ PARA MOVER LA FOTO DENTRO DEL CÍRCULO:
 ¡SOLO CAMBIA LOS NÚMEROS ENTRE PARÉNTESIS!
 */
 */
+
 
 
 
