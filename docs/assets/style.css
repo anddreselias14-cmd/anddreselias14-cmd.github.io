@@ -33,22 +33,17 @@ header {
 }
 
 /* ¡¡¡AJUSTA ESTOS 4 VALORES NADA MÁS!!! */
-.profile-photo {
-    width: 100%;
-    height: 100%;
+.profile-img {
+    width: 120%;
+    height: 120%;
+    position: absolute;
+    top: 65%;       /* Mantén igual */
+    left: 75%;      /* Cambia 65% por 70% */
+    transform: translate(-50%, -50%);
+    object-position: 75% 70%; /* Cambia 70% 70% por 75% 70% */
     object-fit: cover;
-    
-    /* VALOR 1 y 2: Posición horizontal y vertical */
-    /* 50% = centro, menos = izquierda/arriba, más = derecha/abajo */
-    object-position: 50% 50%;
-    
-    /* VALOR 3: Zoom horizontal (100% = normal, más = zoom out) */
-    transform: scale(1.0);
-    
-    /* VALOR 4: Desplazamiento extra si es necesario */
-    transform: translate(0%, 0%);
-    
     display: block;
+    transition: transform 0.3s ease;
 }
 
 /* --- 4. TEXTO DEL ENCABEZADO --- */
@@ -212,5 +207,6 @@ PARA MOVER LA FOTO DENTRO DEL CÍRCULO:
 ¡SOLO CAMBIA LOS NÚMEROS ENTRE PARÉNTESIS!
 */
 */
+
 
 
