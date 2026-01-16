@@ -1,27 +1,151 @@
 /* --- 1. FONDO ANIMADO Y CONFIGURACIÓN BÁSICA --- */
 body {
     width: 100%;
-    min-height: 100vh; /* Permite que el fondo crezca si el CV es largo */
+    min-height: 100vh;
     margin: 0;
     padding: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #333; /* Texto oscuro para leerse bien sobre blanco */
+    color: #333;
     
-    /* Tu fondo animado */
+    /* Fondo animado */
     background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
     background-size: 400% 400%;
-    -webkit-animation: Gradient 15s ease infinite;
-    -moz-animation: Gradient 15s ease infinite;
     animation: Gradient 15s ease infinite;
 }
 
-/* Animaciones del fondo */
-@-webkit-keyframes Gradient {
+@keyframes Gradient {
     0% { background-position: 0% 50% }
     50% { background-position: 100% 50% }
     100% { background-position: 0% 50% }
 }
-@-moz-keyframes Gradient {
-    0% { background-position: 0% 50% }
-    50% { background-position: 100% 50% }
-    100% { background-position: 0% 50% }
+
+/* --- 2. CONTENEDOR PRINCIPAL (LA "HOJA") --- */
+.container {
+    max-width: 850px;
+    margin: 40px auto;
+    background-color: #ffffff;
+    padding: 3rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+/* --- 3. ESTILOS DE LA FOTO (CORRECCIÓN DEFINITIVA) --- */
+.profile-img {
+    /* Tamaño fijo del círculo */
+    width: 180px;
+    height: 180px;
+
+    /* MAGIA: Esto obliga a la foto a llenar el círculo y la centra */
+    object-fit: cover;        /* Recorta lo que sobre sin deformar */
+    object-position: center top; /* Alinea priorizando la cara */
+
+    /* Forma y Borde */
+    border-radius: 50%;       /* Crea el círculo perfecto */
+    border: 5px solid #ffffff; /* El borde blanco */
+    
+    /* Posicionamiento */
+    display: block;
+    margin: 0 auto 1.5rem auto; /* Centrado horizontal */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2); /* Sombra suave */
+    background-color: #fff; /* Fondo de seguridad */
+}
+
+/* --- 4. ENCABEZADO Y TEXTOS --- */
+header {
+    text-align: center;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 1rem;
+}
+
+h1 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    color: #23A6D5;
+    margin: 0;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+}
+
+header p {
+    font-size: 1.2rem;
+    color: #666;
+    margin-top: 0.5rem;
+}
+
+/* --- 5. SECCIONES Y TÍTULOS --- */
+section {
+    margin-bottom: 2rem;
+}
+
+h2 {
+    color: #E73C7E;
+    border-left: 5px solid #E73C7E;
+    padding-left: 15px;
+    margin-top: 2rem;
+    text-transform: uppercase;
+    font-size: 1.4rem;
+}
+
+/* --- 6. LISTAS DE EXPERIENCIA (JOBS) --- */
+.job, .school, .course {
+    margin-bottom: 1.5rem;
+}
+
+.job-header {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.company {
+    color: #555;
+    font-style: italic;
+    margin-bottom: 0.5rem;
+}
+
+ul {
+    margin-top: 0.5rem;
+    padding-left: 20px;
+    color: #444;
+}
+
+li {
+    margin-bottom: 0.5rem;
+}
+
+/* --- 7. CONTACTO --- */
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    background: #f9f9f9;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #eee;
+}
+
+.contact-item strong {
+    color: #23A6D5;
+}
+
+/* --- 8. MÓVIL (RESPONSIVE) --- */
+@media (max-width: 600px) {
+    .container {
+        margin: 10px;
+        padding: 1.5rem;
+    }
+    h1 {
+        font-size: 1.8rem;
+    }
+    .profile-img {
+        width: 150px; /* Un poco más pequeña en celular */
+        height: 150px;
+    }
+    .job-header {
+        flex-direction: column;
+    }
+}
