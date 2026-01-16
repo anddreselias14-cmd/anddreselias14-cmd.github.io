@@ -1,152 +1,102 @@
 /* ============================================
-   CSS COMPLETO PARA CV - ANDRÉS CASTELLANOS
-   CON FOTO PERFECTAMENTE CENTRADA EN EL CÍRCULO
+   CSS COMPLETO - CV ANDRÉS CASTELLANOS
+   VERSIÓN SIMPLIFICADA CON AJUSTE FÁCIL
    ============================================ */
 
-/* --- 1. FONDO ANIMADO Y CONFIGURACIÓN BÁSICA --- */
+/* --- 1. CONFIGURACIÓN BÁSICA --- */
 body {
-    width: 100%;
-    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f4f4f9;
     color: #333;
-    
-    /* Fondo animado */
-    background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
-    background-size: 400% 400%;
-    animation: Gradient 15s ease infinite;
+    line-height: 1.6;
 }
 
-@keyframes Gradient {
-    0% { background-position: 0% 50% }
-    50% { background-position: 100% 50% }
-    100% { background-position: 0% 50% }
-}
-
-/* --- 2. SOLUCIÓN DEFINITIVA PARA LA FOTO --- */
-/* Contenedor principal del marco */
-.photo-frame {
-    width: 230px;
-    height: 230px;
-    margin: 0 auto 1.5rem auto;
-    padding: 10px;
-    background: linear-gradient(135deg, #23A6D5, #E73C7E);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
-    transition: transform 0.3s ease;
-}
-
-.photo-frame:hover {
-    transform: scale(1.03);
-}
-
-/* Máscara circular que recorta la foto */
-.photo-mask {
-    width: 210px;
-    height: 210px;
-    border-radius: 50%;
-    overflow: hidden; /* Esto es clave: corta lo que sobresalga */
-    border: 4px solid white;
-    position: relative;
-}
-
-/* ¡ESTA ES LA SOLUCIÓN! - Foto perfectamente centrada */
-.profile-img {
-    /* Tamaño ligeramente mayor para permitir ajuste */
-    width: 112%;
-    height: 112%;
-    
-    /* POSICIONAMIENTO ABSOLUTO PARA CONTROL TOTAL */
-    position: absolute;
-    
-    /* CENTRADO BÁSICO - ajusta estos valores según tu foto */
-    top: 58%;
-    left: 58%;
-    transform: translate(-50%, -50%);
-    
-    /* AJUSTA ESTA LÍNEA PARA CENTRAR TU CARA */
-    object-position: 63% 63%; /* <-- ¡CAMBIAR ESTOS NÚMEROS! */
-    
-    /* Propiedades fijas */
-    object-fit: cover;
-    display: block;
-    
-    /* Transición suave para hover */
-    transition: all 0.3s ease;
-}
-
-/* Efecto hover */
-.profile-img:hover {
-    transform: translate(-50%, -50%) scale(1.05);
-}
-
-/* --- GUÍA RÁPIDA PARA AJUSTAR object-position --- */
-/*
-object-position: [horizontal]% [vertical]%;
-
-EJEMPLOS:
-- object-position: 50% 50%  → Centro exacto
-- object-position: 45% 50%  → Mueve la cara a la IZQUIERDA
-- object-position: 55% 50%  → Mueve la cara a la DERECHA
-- object-position: 50% 40%  → Mueve la cara hacia ARRIBA
-- object-position: 50% 60%  → Mueve la cara hacia ABAJO
-
-¡Prueba diferentes valores hasta que tu cara quede centrada!
-*/
-
-/* --- 3. ENCABEZADO Y TEXTOS --- */
+/* --- 2. ENCABEZADO CON FOTO --- */
 header {
+    background: linear-gradient(135deg, #004e92, #000428);
+    color: white;
+    padding: 3rem 1rem;
     text-align: center;
-    margin-bottom: 2rem;
-    border-bottom: 1px solid #eee;
-    padding-bottom: 1rem;
 }
 
-h1 {
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 700;
-    color: #23A6D5;
+/* --- 3. MARCO DE LA FOTO - AJUSTA SOLO ESTA SECCIÓN --- */
+.photo-container {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 1.5rem;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 5px solid white;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* ¡¡¡AJUSTA ESTOS 4 VALORES NADA MÁS!!! */
+.profile-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    
+    /* VALOR 1 y 2: Posición horizontal y vertical */
+    /* 50% = centro, menos = izquierda/arriba, más = derecha/abajo */
+    object-position: 50% 50%;
+    
+    /* VALOR 3: Zoom horizontal (100% = normal, más = zoom out) */
+    transform: scale(1.0);
+    
+    /* VALOR 4: Desplazamiento extra si es necesario */
+    transform: translate(0%, 0%);
+    
+    display: block;
+}
+
+/* --- 4. TEXTO DEL ENCABEZADO --- */
+header h1 {
     margin: 0;
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 header p {
-    font-size: 1.2rem;
-    color: #666;
-    margin-top: 0.5rem;
+    margin: 0.5rem 0 0;
+    font-size: 1.1rem;
+    opacity: 0.9;
 }
 
-/* --- 4. CONTENEDOR PRINCIPAL (LA "HOJA" DEL CV) --- */
+/* --- 5. CONTENEDOR PRINCIPAL --- */
 .container {
-    max-width: 850px;
-    margin: 40px auto;
-    background-color: #ffffff;
-    padding: 3rem;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    max-width: 800px;
+    margin: -30px auto 40px;
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
 }
 
-/* --- 5. SECCIONES Y TÍTULOS --- */
+/* --- 6. SECCIONES --- */
 section {
     margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #eee;
+}
+
+section:last-child {
+    border-bottom: none;
 }
 
 h2 {
-    color: #E73C7E;
-    border-left: 5px solid #E73C7E;
-    padding-left: 15px;
-    margin-top: 2rem;
+    color: #004e92;
+    border-left: 4px solid #004e92;
+    padding-left: 10px;
+    margin: 1.5rem 0 1rem;
+    font-size: 1.3rem;
     text-transform: uppercase;
-    font-size: 1.4rem;
 }
 
-/* --- 6. LISTAS DE EXPERIENCIA (JOBS) --- */
-.job, .school, .course {
+/* --- 7. EXPERIENCIA LABORAL --- */
+.job {
     margin-bottom: 1.5rem;
 }
 
@@ -154,62 +104,70 @@ h2 {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    margin-bottom: 0.3rem;
+}
+
+.job-title {
     font-weight: bold;
-    font-size: 1.1rem;
-    color: #333;
+    color: #222;
+}
+
+.job-date {
+    color: #666;
+    font-style: italic;
 }
 
 .company {
     color: #555;
-    font-style: italic;
     margin-bottom: 0.5rem;
 }
 
 ul {
-    margin-top: 0.5rem;
+    margin: 0.5rem 0 0;
     padding-left: 20px;
-    color: #444;
 }
 
 li {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.3rem;
 }
 
-/* --- 7. CONTACTO --- */
-.contact-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1rem;
+/* --- 8. EDUCACIÓN --- */
+.school {
+    margin-bottom: 1rem;
+}
+
+/* --- 9. CONTACTO --- */
+.contact-info {
     background: #f9f9f9;
-    padding: 1.5rem;
+    padding: 1.2rem;
     border-radius: 8px;
-    border: 1px solid #eee;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 0.8rem;
 }
 
 .contact-item strong {
-    color: #23A6D5;
+    color: #004e92;
 }
 
-/* --- 8. MÓVIL (RESPONSIVE) --- */
-@media (max-width: 600px) {
+/* --- 10. RESPONSIVE --- */
+@media (max-width: 700px) {
     .container {
-        margin: 10px;
+        margin: -20px 15px 30px;
         padding: 1.5rem;
     }
     
-    h1 {
+    header {
+        padding: 2rem 1rem;
+    }
+    
+    header h1 {
         font-size: 1.8rem;
     }
     
-    .photo-frame {
-        width: 200px;
-        height: 200px;
-        padding: 8px;
-    }
-    
-    .photo-mask {
-        width: 184px;
-        height: 184px;
+    .photo-container {
+        width: 180px;
+        height: 180px;
     }
     
     .job-header {
@@ -218,68 +176,41 @@ li {
 }
 
 @media (max-width: 400px) {
-    .photo-frame {
-        width: 180px;
-        height: 180px;
-        padding: 7px;
+    .photo-container {
+        width: 160px;
+        height: 160px;
     }
     
-    .photo-mask {
-        width: 166px;
-        height: 166px;
-    }
-    
-    h1 {
-        font-size: 1.6rem;
+    header h1 {
+        font-size: 1.5rem;
     }
 }
 
-/* --- 9. ESTILOS ADICIONALES PARA MEJORAR APARIENCIA --- */
-* {
-    box-sizing: border-box;
-}
-
-body {
-    line-height: 1.6;
-}
-
-a {
-    color: #23A6D5;
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-/* --- 10. CLASES PARA PRUEBAS RÁPIDAS --- */
-/* Descomenta estas clases para probar diferentes centrados */
-
-/* Para mover cara a la IZQUIERDA */
+/* --- 11. GUÍA VISUAL DE AJUSTES --- */
 /*
-.profile-img {
-    object-position: 45% 50% !important;
-}
+PARA MOVER LA FOTO DENTRO DEL CÍRCULO:
+
+1. object-position: [horizontal]% [vertical]%;
+   - Ej: 50% 50% = centro perfecto
+   - 40% 50% = mueve a la IZQUIERDA
+   - 60% 50% = mueve a la DERECHA
+   - 50% 40% = mueve hacia ARRIBA
+   - 50% 60% = mueve hacia ABAJO
+
+2. transform: scale([numero]);
+   - 1.0 = tamaño normal
+   - 1.1 = zoom out 10%
+   - 0.9 = zoom in 10%
+
+3. transform: translate([horizontal]%, [vertical]%);
+   - 0% 0% = sin desplazamiento extra
+   - 5% 0% = mueve 5% a la derecha
+   - -5% 0% = mueve 5% a la izquierda
+   - 0% 5% = mueve 5% hacia abajo
+   - 0% -5% = mueve 5% hacia arriba
+
+¡SOLO CAMBIA LOS NÚMEROS ENTRE PARÉNTESIS!
+*/
 */
 
-/* Para mover cara a la DERECHA */
-/*
-.profile-img {
-    object-position: 55% 50% !important;
-}
-*/
-
-/* Para mover cara hacia ARRIBA */
-/*
-.profile-img {
-    object-position: 50% 35% !important;
-}
-*/
-
-/* Para mover cara hacia ABAJO */
-/*
-.profile-img {
-    object-position: 50% 55% !important;
-}
-*/
 
