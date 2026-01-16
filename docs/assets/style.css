@@ -1,3 +1,8 @@
+/* ============================================
+   CSS COMPLETO PARA CV - ANDRÉS CASTELLANOS
+   CON FOTO PERFECTAMENTE CENTRADA EN EL CÍRCULO
+   ============================================ */
+
 /* --- 1. FONDO ANIMADO Y CONFIGURACIÓN BÁSICA --- */
 body {
     width: 100%;
@@ -19,7 +24,8 @@ body {
     100% { background-position: 0% 50% }
 }
 
-/* --- 2. CONTENEDOR PARA RECORTE Y CENTRADO PERFECTO --- */
+/* --- 2. SOLUCIÓN DEFINITIVA PARA LA FOTO --- */
+/* Contenedor principal del marco */
 .photo-frame {
     width: 230px;
     height: 230px;
@@ -38,44 +44,58 @@ body {
     transform: scale(1.03);
 }
 
+/* Máscara circular que recorta la foto */
 .photo-mask {
     width: 210px;
     height: 210px;
     border-radius: 50%;
-    overflow: hidden;
+    overflow: hidden; /* Esto es clave: corta lo que sobresalga */
     border: 4px solid white;
-    position: relative; /* Para centrado absoluto */
+    position: relative;
 }
 
-/* FOTO PERFECTAMENTE CENTRADA */
+/* ¡ESTA ES LA SOLUCIÓN! - Foto perfectamente centrada */
 .profile-img {
-    width: 100%;
-    height: 100%;
+    /* Tamaño ligeramente mayor para permitir ajuste */
+    width: 105%;
+    height: 105%;
+    
+    /* POSICIONAMIENTO ABSOLUTO PARA CONTROL TOTAL */
+    position: absolute;
+    
+    /* CENTRADO BÁSICO - ajusta estos valores según tu foto */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    /* AJUSTA ESTA LÍNEA PARA CENTRAR TU CARA */
+    object-position: 50% 40%; /* <-- ¡CAMBIAR ESTOS NÚMEROS! */
+    
+    /* Propiedades fijas */
     object-fit: cover;
-    object-position: center center; /* ¡Esto debería centrarla! */
     display: block;
-    border-radius: 50%;
-    transition: transform 0.3s ease;
+    
+    /* Transición suave para hover */
+    transition: all 0.3s ease;
 }
 
+/* Efecto hover */
 .profile-img:hover {
-    transform: scale(1.05);
+    transform: translate(-50%, -50%) scale(1.05);
 }
 
-/* OPCIÓN 2: Versión más simple (descomenta si quieres probar) */
+/* --- GUÍA RÁPIDA PARA AJUSTAR object-position --- */
 /*
-.profile-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center 25%; /* Ajusta el 25% según donde esté tu cara */
-    display: block;
-    transition: transform 0.3s ease;
-}
+object-position: [horizontal]% [vertical]%;
 
-.profile-img:hover {
-    transform: scale(1.05);
-}
+EJEMPLOS:
+- object-position: 50% 50%  → Centro exacto
+- object-position: 45% 50%  → Mueve la cara a la IZQUIERDA
+- object-position: 55% 50%  → Mueve la cara a la DERECHA
+- object-position: 50% 40%  → Mueve la cara hacia ARRIBA
+- object-position: 50% 60%  → Mueve la cara hacia ABAJO
+
+¡Prueba diferentes valores hasta que tu cara quede centrada!
 */
 
 /* --- 3. ENCABEZADO Y TEXTOS --- */
@@ -101,7 +121,7 @@ header p {
     margin-top: 0.5rem;
 }
 
-/* --- 4. CONTENEDOR PRINCIPAL (LA "HOJA") --- */
+/* --- 4. CONTENEDOR PRINCIPAL (LA "HOJA" DEL CV) --- */
 .container {
     max-width: 850px;
     margin: 40px auto;
@@ -214,21 +234,51 @@ li {
     }
 }
 
-/* --- 9. AJUSTE PARA CENTRAR LA FOTO (MODIFICA ESTOS VALORES) --- */
-/*
-Para ajustar el centrado vertical de tu cara, cambia el valor de object-position:
-
-- object-position: 50% 25%; → Cara alta en la foto
-- object-position: 50% 30%; → Cara en posición media-alta (valor actual)
-- object-position: 50% 40%; → Cara baja en la foto
-- object-position: 50% 50%; → Centro exacto (generalmente no es ideal para retratos)
-
-Solo cambia el segundo número (25, 30, 40, etc.) hasta que tu cara quede centrada.
-*/
-
-/* Si necesitas más ajuste, descomenta y modifica esta línea: */
-/*
-.profile-img {
-    object-position: 50% 35%; /* Cambia el 35 por el valor que funcione */
+/* --- 9. ESTILOS ADICIONALES PARA MEJORAR APARIENCIA --- */
+* {
+    box-sizing: border-box;
 }
 
+body {
+    line-height: 1.6;
+}
+
+a {
+    color: #23A6D5;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* --- 10. CLASES PARA PRUEBAS RÁPIDAS --- */
+/* Descomenta estas clases para probar diferentes centrados */
+
+/* Para mover cara a la IZQUIERDA */
+/*
+.profile-img {
+    object-position: 45% 50% !important;
+}
+*/
+
+/* Para mover cara a la DERECHA */
+/*
+.profile-img {
+    object-position: 55% 50% !important;
+}
+*/
+
+/* Para mover cara hacia ARRIBA */
+/*
+.profile-img {
+    object-position: 50% 35% !important;
+}
+*/
+
+/* Para mover cara hacia ABAJO */
+/*
+.profile-img {
+    object-position: 50% 55% !important;
+}
+*/
