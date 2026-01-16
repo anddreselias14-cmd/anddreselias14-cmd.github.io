@@ -30,35 +30,44 @@
             text-align: center;
         }
 
-        /* FOTO MÁS GRANDE Y CENTRADA */
+        /* CONTENEDOR PARA RECORTE PERFECTO (SOLUCIÓN 1) */
+        .photo-frame {
+            width: 230px;
+            height: 230px;
+            margin: 0 auto 1.5rem auto;
+            padding: 10px;
+            background: linear-gradient(135deg, #23A6D5, #E73C7E);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .photo-frame:hover {
+            transform: scale(1.03);
+        }
+
+        .photo-mask {
+            width: 210px;
+            height: 210px;
+            border-radius: 50%;
+            overflow: hidden; /* Esto oculta cualquier parte blanca que sobresalga */
+            border: 4px solid white;
+        }
+
         .profile-img {
-            /* Tamaño aumentado significativamente */
-            width: 220px;
-            height: 220px;
-            
-            /* Centrado perfecto */
+            width: 100%;
+            height: 100%;
             object-fit: cover;
             object-position: center center;
-            
-            /* Forma circular */
-            border-radius: 50%;
-            
-            /* Borde y efectos */
-            border: 6px solid #ffffff;
-            box-shadow: 
-                0 0 0 2px rgba(35, 166, 213, 0.3),
-                0 8px 25px rgba(0, 0, 0, 0.4);
-            
-            /* Posicionamiento */
             display: block;
-            margin: 0 auto 1.5rem auto;
-            
-            /* Transición */
-            transition: all 0.3s ease;
+            transition: transform 0.3s ease;
         }
 
         .profile-img:hover {
-            transform: scale(1.03);
+            transform: scale(1.05);
         }
 
         header h1 {
@@ -83,7 +92,7 @@
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
             margin-top: -30px;
             border-radius: 8px;
-            position: relative; /* Para que quede encima del header */
+            position: relative;
         }
 
         /* Sections */
@@ -174,17 +183,28 @@
                 flex-direction: column; 
             }
             
-            .profile-img {
+            .photo-frame {
                 width: 200px;
                 height: 200px;
-                border-width: 5px;
+                padding: 8px;
+            }
+            
+            .photo-mask {
+                width: 184px;
+                height: 184px;
             }
         }
         
         @media (max-width: 400px) {
-            .profile-img {
+            .photo-frame {
                 width: 180px;
                 height: 180px;
+                padding: 7px;
+            }
+            
+            .photo-mask {
+                width: 166px;
+                height: 166px;
             }
             
             header h1 {
@@ -196,7 +216,11 @@
 <body>
 
     <header>
-        <img src="foto.jpg" alt="Foto de Andrés" class="profile-img">
+        <div class="photo-frame">
+            <div class="photo-mask">
+                <img src="foto.jpg" alt="Foto de Andrés" class="profile-img">
+            </div>
+        </div>
         
         <h1>Andrés Castellanos</h1>
         <p>Estudiante de Ingeniería en Sistemas | Pasión por la Tecnología</p>
@@ -308,5 +332,3 @@
 
 </body>
 </html>
-
-
